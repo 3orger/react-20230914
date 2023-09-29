@@ -1,20 +1,19 @@
 import { useState } from 'react'
 import { restaurants } from 'data/restaurants'
-import { Tabs } from 'components/Tabs/Tabs'
-import { CardRestaurant } from 'components/CardRestaurant/CardRestaurant'
+import { RestaurantTabs } from 'components/RestaurantTabs/RestaurantTabs'
+import { Restaurant } from 'components/Restaurant/Restaurant'
 
 export function Home() {
-  const [activeTab, setActiveTab] = useState(restaurants[0].name)
+  const [activeRestaurantIndex, setActiveRestaurantIndex] = useState(0)
+
+  if (restaurants.length < 2) {
+    return null
+  }
 
   return (
-    <>
-      <Tabs list={restaurants} openTab={(el) => setActiveTab(el.target.innerText)}>
-        {restaurants.map((item) => {
-          if (activeTab === item.name) {
-            return <CardRestaurant key={item.id} data={item} />
-          }
-        })}
-      </Tabs>
-    </>
+    <div>
+      <RestaurantTabs restaurants={restaurants} onTabSelect={setActiveRestaurantIndex} />
+      <Restaurant restaurant={restaurants[activeRestaurantIndex]} />
+    </div>
   )
 }

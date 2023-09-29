@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export function Amount() {
+export const Amount = () => {
   const [amount, setAmount] = useState(0)
 
   return (

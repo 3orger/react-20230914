@@ -1,8 +1,8 @@
-export function Reviews({ list }) {
+export const Reviews = ({ reviews }) => {
   return (
     <ul>
-      {list.map((item) => (
-        <li key={item.id}>{item.text}</li>
+      {reviews.map((review) => (
+        <li key={review.id}>{review.text}</li>
       ))}
     </ul>
   )

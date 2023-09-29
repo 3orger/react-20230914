@@ -1,11 +1,11 @@
-import { Amount } from 'components/Amount/Amount'
+import { Dish } from 'components/Dish/Dish'
 
-export function Menu({ list }) {
+export const Menu = ({ dishes }) => {
   return (
     <ul>
-      {list.map((item) => (
-        <li key={item.id}>
-          {item.name} <Amount />
+      {dishes.map((dish) => (
+        <li key={dish.id}>
+          <Dish dish={dish} />
         </li>
       ))}
     </ul>
