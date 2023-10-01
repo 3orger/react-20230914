@@ -1,10 +1,11 @@
 import { Dish } from 'components/Dish/Dish'
+import styles from './Menu.module.scss'
 
 export const Menu = ({ dishes }) => {
   return (
-    <ul>
+    <ul className={styles.menu}>
       {dishes.map((dish) => (
-        <li key={dish.id}>
+        <li className={styles.menuItem} key={dish.id}>
           <Dish dish={dish} />
         </li>
       ))}

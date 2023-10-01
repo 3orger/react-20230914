@@ -1,8 +1,71 @@
-.container {
-  max-width: 1170px;
-  margin: 0 auto;
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+body,
+body > div {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.375;
+  color: #000000;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+input {
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+}
+
+label {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 main {
-  padding-top: 90px;
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 100%;
+  padding: 0 120px;
+  margin: 0 auto;
 }
