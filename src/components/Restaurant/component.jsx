@@ -1,10 +1,11 @@
-import { Menu } from 'components/Menu/Menu'
-import { Reviews } from 'components/Reviews/Reviews'
-import styles from './Restaurant.module.scss'
+import { Menu } from 'components/Menu/component'
+import { Reviews } from 'components/Reviews/component'
+
+import styles from './styles.module.scss'
 
 export const Restaurant = ({ restaurant }) => {
   return (
-    <div className={styles.restaurant}>
+    <div className={styles.root}>
       <h2 className={styles.title}>{restaurant.name}</h2>
       <Menu dishes={restaurant.menu} />
       <Reviews reviews={restaurant.reviews} />

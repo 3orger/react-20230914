@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { restaurants } from 'data/restaurants'
 
-import { RestaurantTabs } from 'components/RestaurantTabs/RestaurantTabs'
-import { Restaurant } from 'components/Restaurant/Restaurant'
-import { Header } from 'components/Header/Header'
-import { Footer } from 'components/Footer/Footer'
+import { RestaurantTabs } from 'components/RestaurantTabs/component'
+import { Restaurant } from 'components/Restaurant/component'
+import { Header } from 'components/Header/component'
+import { Footer } from 'components/Footer/component'
+
+import styles from 'pages/Home/styles.module.scss'
 
 export function Home() {
   const [activeRestaurantIndex, setActiveRestaurantIndex] = useState(0)
@@ -15,10 +17,11 @@ export function Home() {
 
   return (
     <>
-      <Header heading='React 2023-09-14' />
+      <Header className={styles.header} heading="React 2023-09-14" />
       <main>
-        <div className='container'>
+        <div className="container">
           <RestaurantTabs
+            className={styles.tabs}
             restaurants={restaurants}
             activeRestaurantIndex={activeRestaurantIndex}
             onTabSelect={setActiveRestaurantIndex}
@@ -26,7 +29,7 @@ export function Home() {
           <Restaurant restaurant={restaurants[activeRestaurantIndex]} />
         </div>
       </main>
-      <Footer heading='React 2023-09-14' />
+      <Footer className={styles.footer} heading="React 2023-09-14" />
     </>
   )
 }

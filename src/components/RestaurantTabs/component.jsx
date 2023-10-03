@@ -1,12 +1,14 @@
-import { RestaurantTab } from 'components/RestaurantTab/RestaurantTab'
-import styles from './RestaurantTabs.module.scss'
 import classNames from 'classnames'
+import { RestaurantTab } from 'components/RestaurantTab/component'
 
-export const RestaurantTabs = ({ restaurants, activeRestaurantIndex, onTabSelect }) => {
+import styles from './styles.module.scss'
+
+export const RestaurantTabs = ({ restaurants, activeRestaurantIndex, onTabSelect, className }) => {
   return (
-    <div className={styles.tabs}>
+    <div className={classNames(styles.root, className)}>
       {restaurants.map((restaurant, index) => (
         <RestaurantTab
+          className={styles.tab}
           activeTabClass={classNames({ ['active']: index === activeRestaurantIndex })}
           key={restaurant.id}
           title={restaurant.name}
