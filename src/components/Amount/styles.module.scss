@@ -19,4 +19,12 @@
     display: inline-block;
     margin: 0 10px;
   }
+
+  .dark {
+    background-color: #6c0909;
+    &:disabled {
+      color: #f7f7fa;
+      background-color: #333333;
+    }
+  }
 }

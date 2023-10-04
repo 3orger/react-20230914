@@ -18,10 +18,10 @@ export function Home() {
 
   return (
     <>
-      <ThemeSwitchProvider value="dark-theme">
-        <Header className={styles.header} heading="React 2023-09-14" />
+      <ThemeSwitchProvider>
+        <Header className={styles.header} heading='React 2023-09-14' />
         <main>
-          <div className="container">
+          <div className='container'>
             <RestaurantTabs
               className={styles.tabs}
               restaurants={restaurants}
@@ -31,7 +31,7 @@ export function Home() {
             <Restaurant restaurant={restaurants[activeRestaurantIndex]} />
           </div>
         </main>
-        <Footer className={styles.footer} heading="React 2023-09-14" />
+        <Footer className={styles.footer} heading='React 2023-09-14' />
       </ThemeSwitchProvider>
     </>
   )

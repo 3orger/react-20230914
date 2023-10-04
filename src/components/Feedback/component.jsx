@@ -1,5 +1,4 @@
 import { useReducer } from 'react'
-import styles from './styles.module.scss'
 
 const DEFAULT_VALUE = {
   name: '',
@@ -30,15 +29,12 @@ export const Feedback = () => {
   const [formValue, dispatch] = useReducer(reducer, DEFAULT_VALUE)
 
   return (
-    <div className={styles.root}>
-      <h3 className={styles.title}>Оставить отзыв</h3>
-      <div className={styles.field}>
-        <label className={styles.label} htmlFor='userName'>
-          Имя:
-        </label>
+    <div>
+      <h3>Оставить отзыв</h3>
+      <div>
+        <label htmlFor='userName'>Имя:</label>
         <input
           id='userName'
-          className={styles.input}
           type='text'
           value={formValue.name}
           onChange={(event) => {
@@ -46,26 +42,20 @@ export const Feedback = () => {
           }}
         />
       </div>
-      <div className={styles.field}>
-        <label className={styles.label} htmlFor='userComment'>
-          Комментарий:
-        </label>
+      <div>
+        <label htmlFor='userComment'>Комментарий:</label>
         <textarea
           id='userComment'
-          className={styles.textarea}
           value={formValue.comment}
           onChange={(event) => {
             dispatch({ type: 'setComment', payload: event.target.value })
           }}
         />
       </div>
-      <div className={styles.field}>
-        <label className={styles.label} htmlFor='userRating'>
-          Рейтинг:
-        </label>
+      <div>
+        <label htmlFor='userRating'>Рейтинг:</label>
         <input
           id='userRating'
-          className={styles.input}
           type='number'
           value={formValue.rating}
           onChange={(event) => {
@@ -73,9 +63,8 @@ export const Feedback = () => {
           }}
         />
       </div>
-      <div className={styles.field}>
+      <div>
         <button
-          className={styles.submit}
           onClick={() => {
             dispatch({ type: 'reset' })
           }}
