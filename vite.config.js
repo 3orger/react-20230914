@@ -10,6 +10,7 @@ export default defineConfig({
       data: '/src/data',
       pages: '/src/pages',
       styles: '/src/styles',
+      contexts: '/src/contexts',
     },
   },
 })
