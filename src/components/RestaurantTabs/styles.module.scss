@@ -1,0 +1,13 @@
+.root {
+  display: inline-flex;
+  padding: 5px 10px;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+}
+
+.tab {
+  margin-right: 5px;
+  &:last-child {
+    margin-right: 0;
+  }
+}

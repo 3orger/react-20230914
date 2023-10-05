@@ -1,0 +1,30 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+
+  .btn {
+    height: 25px;
+    padding: 0 10px;
+    color: #ffffff;
+    background-color: #dd0a34;
+    border-radius: 8px;
+    box-sizing: border-box;
+    &:disabled {
+      color: #f7f7fa;
+      background-color: #cbcbd0;
+    }
+  }
+
+  .count {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  .dark {
+    background-color: #6c0909;
+    &:disabled {
+      color: #f7f7fa;
+      background-color: #333333;
+    }
+  }
+}
