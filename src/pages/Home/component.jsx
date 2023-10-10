@@ -3,8 +3,7 @@ import { restaurants } from 'data/restaurants'
 
 import { RestaurantTabs } from 'components/RestaurantTabs/component'
 import { Restaurant } from 'components/Restaurant/component'
-import { Header } from 'components/Header/component'
-import { Footer } from 'components/Footer/component'
+import { Layout } from 'components/Layout/component'
 import { ThemeSwitchProvider } from 'contexts/SwitchThemeContext'
 
 import styles from 'pages/Home/styles.module.scss'
@@ -19,19 +18,15 @@ export function Home() {
   return (
     <>
       <ThemeSwitchProvider>
-        <Header className={styles.header} heading='React 2023-09-14' />
-        <main>
-          <div className='container'>
-            <RestaurantTabs
-              className={styles.tabs}
-              restaurants={restaurants}
-              activeRestaurantIndex={activeRestaurantIndex}
-              onTabSelect={setActiveRestaurantIndex}
-            />
-            <Restaurant restaurant={restaurants[activeRestaurantIndex]} />
-          </div>
-        </main>
-        <Footer className={styles.footer} heading='React 2023-09-14' />
+        <Layout>
+          <RestaurantTabs
+            className={styles.tabs}
+            restaurants={restaurants}
+            activeRestaurantIndex={activeRestaurantIndex}
+            onTabSelect={setActiveRestaurantIndex}
+          />
+          <Restaurant restaurant={restaurants[activeRestaurantIndex]} />
+        </Layout>
       </ThemeSwitchProvider>
     </>
   )

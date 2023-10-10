@@ -19,11 +19,9 @@ ol {
   list-style: none;
 }
 
-body,
-body > div {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+html,
+body {
+  height: 100%;
   font-size: 16px;
   font-weight: 400;
   font-style: normal;
@@ -31,6 +29,12 @@ body > div {
   color: #000000;
   background: #ffffff;
   overflow-x: hidden;
+}
+
+#root {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 button {
@@ -60,12 +64,8 @@ img {
   object-fit: cover;
 }
 
-main {
-  flex-grow: 1;
-}
-
 .container {
   max-width: 100%;
-  padding: 0 120px;
   margin: 0 auto;
+  padding: 0 120px;
 }
