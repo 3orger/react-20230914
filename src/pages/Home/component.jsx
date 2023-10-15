@@ -16,18 +16,16 @@ export function Home() {
   }
 
   return (
-    <>
-      <ThemeSwitchProvider>
-        <Layout>
-          <RestaurantTabs
-            className={styles.tabs}
-            restaurants={restaurants}
-            activeRestaurantIndex={activeRestaurantIndex}
-            onTabSelect={setActiveRestaurantIndex}
-          />
-          <Restaurant restaurant={restaurants[activeRestaurantIndex]} />
-        </Layout>
-      </ThemeSwitchProvider>
-    </>
+    <ThemeSwitchProvider>
+      <Layout>
+        <RestaurantTabs
+          className={styles.tabs}
+          restaurants={restaurants}
+          activeRestaurantIndex={activeRestaurantIndex}
+          onTabSelect={setActiveRestaurantIndex}
+        />
+        <Restaurant restaurant={restaurants[activeRestaurantIndex]} />
+      </Layout>
+    </ThemeSwitchProvider>
   )
 }
